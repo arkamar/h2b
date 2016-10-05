@@ -1,0 +1,30 @@
+.Dd October 2016
+.Dt H2B 1
+.Sh NAME
+.Nm h2b
+.Nd Hex to bin
+.Sh SYNOPSIS
+.Nm
+.Sh DESCRIPTION
+.Nm
+reads hexadecimal input from standard input and transfers it to its binary form to standard output.
+It is possible to comment input by putting #.
+The comment continues till the end of line (\\n).
+.Pp
+.Nm
+skips all non-hexadecimal characters.
+.Pp
+.Nm
+is case insensitive.
+.Pp
+.Nm
+needs 2 hexadecimal numbers to create 1 octet of binary output.
+If there is an even count of hexadecimals the last one will be skipped.
+.Sh BUGS
+Pleas report them.
+.Sh EXAMPLES
+Following example will print
+.Ar test
+to the standard output.
+.Pp
+.D1 echo '54 65 73 74' | h2b

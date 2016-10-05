@@ -1,0 +1,24 @@
+h2b - Hex to Bin
+================
+
+Installation
+------------
+
+To install h2b simply type
+
+	make clean install
+
+You may want to change config.mk depending on your system.
+
+Running wdtools
+---------------
+
+Simply put your HEX input to a standard input of h2b and the translation will
+be printed to standard output.
+
+Read man page for more information.
+
+Bugs
+----
+
+Pleas report them.
