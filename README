@@ -10,6 +10,9 @@ To install h2b simply type
 
 You may want to change config.mk depending on your system.
 
+Ebuild for Gentoo users may be found in:
+https://github.com/arkamar/overlay/tree/master/sys-apps/h2b
+
 Running h2b
 -----------
 
