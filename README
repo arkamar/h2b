@@ -10,13 +10,13 @@ To install h2b simply type
 
 You may want to change config.mk depending on your system.
 
-Running wdtools
----------------
+Running h2b
+-----------
 
-Simply put your HEX input to a standard input of h2b and the translation will
-be printed to standard output.
+Simply put your HEX input to a standard input of h2b and the conversion will be
+printed to the standard output.
 
-Read man page for more information.
+Read man page for more information and example.
 
 Bugs
 ----
