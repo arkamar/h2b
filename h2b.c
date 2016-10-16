@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 #include <ctype.h>
-#include <unistd.h>
+#include <stdio.h>
 
 static inline
 char
@@ -17,7 +17,7 @@ main(int argc, char * argv[]) {
 	unsigned char c, o, i = 1;
 	unsigned char iscomment = 0;
 
-	while (read(0, &c, 1) > 0) {
+	while (fread(&c, 1, 1, stdin) > 0) {
 
 		if (c == '#')
 			iscomment = 1;
@@ -30,7 +30,7 @@ main(int argc, char * argv[]) {
 				o = hex2dec(c) << 4;
 			} else {
 				o |= hex2dec(c);
-				write(1, &o, 1);
+				fwrite(&o, 1, 1, stdout);
 			}
 			i++;
 		}
