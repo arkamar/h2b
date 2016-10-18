@@ -7,7 +7,7 @@ TARGET = h2b
 SRC = ${TARGET}.c
 OBJ = ${SRC:.c=.o}
 
-all: options h2b
+all: options ${TARGET}
 
 options:
 	@echo ${TARGET} build options:
