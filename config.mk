@@ -6,7 +6,6 @@ VERSION = 0.0
 # paths
 PREFIX = /usr/local
 MANPREFIX = ${PREFIX}/share/man
-LIBPREFIX = ${PREFIX}/lib/surf
 
 # includes and libs
 INCS =
