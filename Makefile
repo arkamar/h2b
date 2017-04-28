@@ -15,17 +15,8 @@ options:
 	@echo "LDFLAGS  = ${LDFLAGS}"
 	@echo "CC       = ${CC}"
 
-.c.o:
-	@echo CC $<
-	@${CC} -c ${CFLAGS} $<
-
-${TARGET}: ${OBJ}
-	@echo CC -o $@
-	@${CC} -o $@ ${TARGET}.o ${LDFLAGS}
-
 clean:
-	@echo cleaning
-	@rm -f ${TARGET} ${OBJ} ${TARGET}-${VERSION}.tar.gz
+	$(RM) $(TARGET) $(OBJ) $(TARGET)-$(VERSION).tar.gz
 
 dist: clean
 	@echo creating dist tarball
