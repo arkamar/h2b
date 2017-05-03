@@ -6,7 +6,7 @@
 #define LENGTH(x) ((sizeof x / sizeof *x))
 
 enum h2b_state {
-	H2B_NORMAL,
+	H2B_HEX,
 	H2B_COMMENT,
 	H2B_QUOTE,
 };
@@ -37,20 +37,20 @@ normal(const unsigned char c) {
 		}
 		i++;
 	}
-	return H2B_NORMAL;
+	return H2B_HEX;
 }
 
 static
 int
 comment(const unsigned char c) {
-	return (c == '\n') ? H2B_NORMAL : H2B_COMMENT;
+	return (c == '\n') ? H2B_HEX : H2B_COMMENT;
 }
 
 static
 int
 quote(const unsigned char c) {
 	if (c == '"')
-		return H2B_NORMAL;
+		return H2B_HEX;
 	fwrite(&c, 1, 1, stdout);
 	return H2B_QUOTE;
 }
@@ -64,7 +64,7 @@ int (* callback[])(const unsigned char) = {
 int
 main(int argc, char * argv[]) {
 	unsigned char c;
-	unsigned char state = H2B_NORMAL;
+	unsigned char state = H2B_HEX;
 
 	while (fread(&c, 1, 1, stdin) > 0)
 		if (state < LENGTH(callback))
