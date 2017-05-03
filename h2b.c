@@ -13,7 +13,7 @@ enum h2b_state {
 
 static inline
 char
-hex2dec(const char c) {
+hex2dec(const unsigned char c) {
 	if ((unsigned)(c - '0') < 10)
 		return c - '0';
 	else /* if ((c | 0x20) - 'a' < 6) */ /* c | 0x20 -> to lower */
@@ -22,7 +22,7 @@ hex2dec(const char c) {
 
 static
 int
-normal(const char c) {
+normal(const unsigned char c) {
 	static unsigned char o, i = 1;
 	if (c == '#')
 		return H2B_COMMENT;
@@ -42,20 +42,20 @@ normal(const char c) {
 
 static
 int
-comment(const char c) {
+comment(const unsigned char c) {
 	return (c == '\n') ? H2B_NORMAL : H2B_COMMENT;
 }
 
 static
 int
-quote(const char c) {
+quote(const unsigned char c) {
 	if (c == '"')
 		return H2B_NORMAL;
 	fwrite(&c, 1, 1, stdout);
 	return H2B_QUOTE;
 }
 
-int (*callback[])(const char) = {
+int (* callback[])(const unsigned char) = {
 	normal,
 	comment,
 	quote
