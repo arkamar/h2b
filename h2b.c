@@ -22,7 +22,7 @@ hex2dec(const unsigned char c) {
 
 static
 int
-normal(const unsigned char c) {
+hex(const unsigned char c) {
 	static unsigned char o, i = 1;
 	if (c == '#')
 		return H2B_COMMENT;
@@ -56,7 +56,7 @@ quote(const unsigned char c) {
 }
 
 int (* callback[])(const unsigned char) = {
-	normal,
+	hex,
 	comment,
 	quote
 };
