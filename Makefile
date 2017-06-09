@@ -2,7 +2,7 @@
 
 include config.mk
 
-TARGET = h2b
+TARGET = h2b hx2b
 
 SRC = ${TARGET}.c
 OBJ = ${SRC:.c=.o}
