@@ -1,4 +1,5 @@
 # h2b version
+NAME    = h2b
 VERSION = 0.0
 
 # Customize below to fit your system
